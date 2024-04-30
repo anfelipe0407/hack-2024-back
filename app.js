@@ -10,13 +10,11 @@ import { fileURLToPath } from 'url';
 
 // * Routers
 import authRouter from "./routes/routers/authRouter.js";
-// import adminRouter from "./routes/routers/adminRouter.js";
-// import docenteRouter from "./routes/routers/docente.router.js";
 
-// import userSesionRouter from "./routes/userSesionRouter.js";
+import vendedorRouter from "./routes/routers/vendedorRouter.js";
 
 // ! Middlewares
-import { hasValidToken } from "./middlewares/AuthenticationMiddleware.js";
+// import { hasValidToken } from "./middlewares/AuthenticationMiddleware.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,7 +38,7 @@ app.listen(port, () => console.log("Server listening on port 8000"));
 
 // ! ROUTERS
 app.use("/", authRouter);
-// app.use("/admin", adminRouter);
+app.use("/vendedor", vendedorRouter);
 // app.use("/docente", docenteRouter);
 
 // app.use("/user-sesion", userSesionRouter);
